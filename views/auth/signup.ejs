@@ -1,0 +1,16 @@
+<h1>Signup</h1>
+<form style="display: flex; flex-direction: column" method="POST" action="/auth/signup">
+  <label
+    >Username: <input type="text" name="username" <% if (typeof errorMessage !== 'undefined') { %>
+    value="<%= userData.username %>" <% } %> /></label
+  >
+  <label
+    >Email: <input type="text" name="email" required <% if (typeof errorMessage !== 'undefined') {
+    %> value="<%= userData.email %>" <% } %> /></label
+  >
+  <label>Password: <input type="password" name="password" required /></label>
+  <button type="submit">SignUp</button>
+</form>
+<% if (typeof errorMessage !== 'undefined') { %>
+<p style="color: red"><%= errorMessage %></p>
+<% } %>
